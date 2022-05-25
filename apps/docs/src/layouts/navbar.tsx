@@ -27,7 +27,7 @@ import { useRouter } from 'next/router';
 import { useMediaQuery } from '@hooks/use-media-query';
 import { isActive } from '@utils/links';
 import { includes } from 'lodash';
-import { StyledNavContainer, StyledNavMainContainer } from './styles';
+import { StyledNavMainContainer } from './styles';
 import { darkTheme } from '@theme/shared';
 import { pulse } from '@utils/animations';
 
@@ -50,6 +50,10 @@ const SearchInput = dynamic(
     ssr: true
   }
 );
+
+const StyledNavContainer = dynamic(() => import('./styles'), {
+  ssr: false
+});
 
 const Navbar: React.FC<Props> = ({ isHome, hasNotify, routes }) => {
   const [expanded, setExpanded] = useState(false);

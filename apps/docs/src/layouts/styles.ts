@@ -38,3 +38,5 @@ export const StyledNavContainer = styled('div', {
     }
   }
 });
+
+export default StyledNavContainer;
